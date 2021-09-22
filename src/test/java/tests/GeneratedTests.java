@@ -17,7 +17,9 @@ public class GeneratedTests extends TestBase {
     @DisplayName("Эвотор")
     void generatedTest() {
         step("Открываем url https://evotor.ru/", () -> {
-            step("// todo: just add selenium action");
+            open("");
+
+        step("// todo: just add selenium action");
         });
     }
 
