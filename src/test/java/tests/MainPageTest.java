@@ -18,7 +18,7 @@ public class MainPageTest extends TestBase {
 
     void blocksLoadedTest() {
 
-        step("Открываем url 'https://dot-dot.ru/'", () ->
+        step("Открываем страницу Эвотор", () ->
                 open(""));
 
         step("Проверяем, что на странице видна ссылка 'Онлайн-кассы'", () -> {
