@@ -18,15 +18,26 @@ public class DownloadTest {
 
     @Test
     @Description("Soon to be implemented by me (or QA engineers)")
-    @DisplayName("Загружаем файл с сертификатом")
-    void presentationDownload() throws IOException {
+    @DisplayName("Загружаем файл с сертификатом и проверяем, что он не пустой")
+    void certificateDownload() throws IOException {
         Configuration.downloadsFolder = "downloads";
 
         open("https://evotor.ru/about-us/");
         File download = $(".certificate-type").download();
         PDF parsed = new PDF(download);
-        assertThat(parsed.text).contains("");
+        assertThat(parsed.text).isNotEmpty();
 
     }
-}
 
+    @Test
+    @Description("Soon to be implemented by me (or QA engineers)")
+    @DisplayName("Загружаем файл с лицензией и проверяем, что он не пустой")
+    void licenseDownload() throws IOException {
+        Configuration.downloadsFolder = "downloads";
+
+        open("https://evotor.ru/about-us/");
+        File download = $(".certificate-type", 1).download();
+        PDF parsed = new PDF(download);
+        assertThat(parsed.text).isNotEmpty();
+    }
+}

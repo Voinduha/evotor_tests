@@ -33,7 +33,7 @@ public class ClipboardTest extends TestBase {
         });
 
         step("Проверяем, что номер телефона введен в правильном формате", () -> {
-            $("[formcontrolname=username]").shouldHave(value("(925) 654-56-67"));
+            $("").shouldHave(value("(925) 654-56-67"));
         });
     }
 }
