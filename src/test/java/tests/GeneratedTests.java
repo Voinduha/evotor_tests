@@ -16,10 +16,10 @@ public class GeneratedTests extends TestBase {
     @Description("Soon to be implemented by you (or QA.GURU engineers)")
     @DisplayName("Эвотор")
     void generatedTest() {
-        step("Открываем страницу Эвотор", () -> {
-            open("");
+        step("Открываем страницу Эвотор", () ->
+            open(""));
 
-        step("Проверяем, что на странице есть раздел 'Маркировка'");
+        step("Проверяем, что на странице есть раздел 'Маркировка'", () -> {
             $("#grey-tiles").shouldHave(Condition.text("Маркировка"));
         });
     }
@@ -31,7 +31,8 @@ public class GeneratedTests extends TestBase {
         step("Open url 'https://evotor.ru/'", () ->
                 open(""));
 
-        step("Проверяем, что на вкладке Evotor есть текст: 'Эвотор - официальный сайт | Онлайн-кассы для малого бизнеса от производителя'", () -> {
+        step("Проверяем, что на вкладке Evotor есть текст: 'Эвотор - официальный сайт | " +
+                "Онлайн-кассы для малого бизнеса от производителя'", () -> {
             String expectedTitle = "Эвотор - официальный сайт | Онлайн-кассы для малого бизнеса от производителя";
             String actualTitle = title();
 
