@@ -24,8 +24,8 @@ public class DownloadTest {
 
         open("https://evotor.ru/about-us/");
         File download = $(".certificate-type").download();
-      //  PDF parsed = new PDF(download);
-       // assertThat(parsed.text).contains("");
+        PDF parsed = new PDF(download);
+        assertThat(parsed.text).contains("");
 
     }
 }
