@@ -17,7 +17,8 @@ public class MainPageTest extends TestBase {
             " 'О компании', 'Наша сеть'" )
     void blocksLoadedTest() {
 
-        step("Открываем главную страницу Эвотор", () -> open(""));
+        step("Открываем главную страницу Эвотор", () ->
+                open(""));
 
         step("Проверяем, что на странице видна ссылка 'Онлайн-кассы'", () -> {
             $("#menu-glavnoe-menyu").shouldHave(text("Онлайн-кассы")).shouldBe(visible);

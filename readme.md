@@ -51,6 +51,10 @@
 
 ![selenoid_screenshot](src/test/resources/images/photo_2021-09-25_23-37-54.jpg)
 
+![selenoid_screenshot](src/test/resources/images/photo_2021-09-25_23-38-07.jpg)
+
+
+
 #### *Jenkins - it is an open source automation server:*
 ![selenoid_screenshot](src/test/resources/images/2021-09-09_13-36-58.png)
 
