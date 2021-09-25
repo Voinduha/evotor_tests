@@ -9,8 +9,7 @@ import org.junit.jupiter.api.condition.DisabledIfSystemProperty;
 import org.openqa.selenium.Keys;
 
 import static com.codeborne.selenide.Condition.value;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
+import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 public class ClipboardTest extends TestBase {
@@ -33,7 +32,7 @@ public class ClipboardTest extends TestBase {
         });
 
         step("Проверяем, что номер телефона введен в правильном формате", () -> {
-            $("").shouldHave(value("(925) 654-56-67"));
+            $(".evo-input__field").shouldHave(value("(925) 654-56-67"));
         });
     }
 }
