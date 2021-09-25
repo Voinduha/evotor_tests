@@ -22,8 +22,9 @@ public class DownloadTest {
     void certificateDownload() throws IOException {
         Configuration.downloadsFolder = "downloads";
 
-        step("Открываем страницу о нас", () ->
-        open("https://evotor.ru/about-us/"));
+        step("Открываем страницу о нас", () -> {
+        open("https://evotor.ru/about-us/");
+        });
 
         step("Скачиваем файл с сертификатом и проверяем, что он не пустой", () -> {
         File download = $(".certificate-type").download();
@@ -38,9 +39,9 @@ public class DownloadTest {
     void licenseDownload() throws IOException {
         Configuration.downloadsFolder = "downloads";
 
-        step("Открываем страницу о нас", () ->
-        open("https://evotor.ru/about-us/"));
-
+        step("Открываем страницу о нас", () -> {
+        open("https://evotor.ru/about-us/");
+        });
         step("Скачиваем файл с лицензией и проверяем, что он не пустой", () -> {
         File download = $(".certificate-type", 1).download();
         PDF parsed = new PDF(download);
