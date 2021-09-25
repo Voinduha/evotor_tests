@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Condition.value;
 import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
-public class ClipboardTest {
+public class ClipboardTest extends TestBase {
     @Test
       @DisabledIfSystemProperty(named = "selenide.remote", matches = "http.*", disabledReason = "Clipboard not " +
      "support on Selenium Grid yet")
@@ -19,17 +19,14 @@ public class ClipboardTest {
     @DisplayName("Проверяем копипасту из буфера обмена в поле ввода телефона на страницу личного кабинета")
     void clipboardLoadTest() {
 
-        step("Открываем личный кабинет'", () -> {
-                open("https://market.evotor.ru/store/auth/login");
-        });
+        step("Открываем личный кабинет'", () ->
+                open("https://market.evotor.ru/store/auth/login"));
 
-        step("Вставляем текст в буфер обмена", () -> {
-            Selenide.clipboard().setText("9256545667");
-        });
+        step("Вставляем текст в буфер обмена", () ->
+                Selenide.clipboard().setText("9256545667"));
 
-        step("Вводим номер телефона в поле на странице комбинацией кнопок CTRL + v", () -> {
-            $(".evo-input").sendKeys(Keys.CONTROL + "v");
-        });
+        step("Вводим номер телефона в поле на странице комбинацией кнопок CTRL + v", () ->
+                $(".evo-input").sendKeys(Keys.CONTROL + "v"));
 
         step("Проверяем, что номер телефона введен в правильном формате", () -> {
             $(".evo-input__field").shouldHave(value("(925) 654-56-67"));
