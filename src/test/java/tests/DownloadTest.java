@@ -7,7 +7,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-import java.io.IOException;
 
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -19,12 +18,11 @@ public class DownloadTest {
     @Test
     @Description("Soon to be implemented by me (or QA engineers)")
     @DisplayName("Загружаем файл с сертификатом и проверяем, что он не пустой")
-    void certificateDownload() throws IOException {
+    void certificateDownload() {
         Configuration.downloadsFolder = "downloads";
 
-        step("Открываем страницу о нас", () -> {
-        open("https://evotor.ru/about-us/");
-        });
+        step("Открываем страницу о нас", () ->
+                open("https://evotor.ru/about-us/"));
 
         step("Скачиваем файл с сертификатом и проверяем, что он не пустой", () -> {
         File download = $(".certificate-type").download();
@@ -36,12 +34,11 @@ public class DownloadTest {
     @Test
     @Description("Soon to be implemented by me (or QA engineers)")
     @DisplayName("Загружаем файл с лицензией и проверяем, что он не пустой")
-    void licenseDownload() throws IOException {
+    void licenseDownload() {
         Configuration.downloadsFolder = "downloads";
 
-        step("Открываем страницу о нас", () -> {
-        open("https://evotor.ru/about-us/");
-        });
+        step("Открываем страницу о нас", () ->
+                open("https://evotor.ru/about-us/"));
         step("Скачиваем файл с лицензией и проверяем, что он не пустой", () -> {
         File download = $(".certificate-type", 1).download();
         PDF parsed = new PDF(download);
