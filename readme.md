@@ -41,7 +41,7 @@
 - [X] :banana: Generated test
 - [X] :orange: Download files test
 - [X] :strawberry: Clipboard copy/past phone test
-- [X] :apple: Clipboard test
+
 
 
 ## Screenshots

@@ -31,7 +31,7 @@ public class GeneratedTests extends TestBase {
         step("Open url 'https://evotor.ru/'", () ->
             open(""));
 
-        step("Проверяем, что на вкладке Evotor есть текст: 'Эвотор - официальный сайт | " +
+        step("Проверяем, что на заглавной странице Evotor есть текст: 'Эвотор - официальный сайт | " +
                 "Онлайн-кассы для малого бизнеса от производителя'", () -> {
             String expectedTitle = "Эвотор - официальный сайт | Онлайн-кассы для малого бизнеса от производителя";
             String actualTitle = title();
